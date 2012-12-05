@@ -6,7 +6,7 @@ E se os Deputados tivesse uma rede social? E se nessa rede social eles fizessem 
 
 ## WebSite Project
 
-Esse projeto no website ou rede social dos deputados da camara
+Esse projeto é o website ou a rede social, de fato, dos deputados da camara
 
 ### Instalação
 ..
