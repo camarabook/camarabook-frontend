@@ -1,1 +1,6 @@
-/*= require_tree .*/
+/*
+ *= require bootstrap
+ *= require util
+ *= profile_box
+ *= require timeline
+ *= require_tree .*/

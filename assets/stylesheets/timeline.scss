@@ -1,0 +1,50 @@
+#feed{
+  float: right
+}
+#activities li{
+  color: #37404e;
+  width: 512px;
+  border: 1px solid #d3d6db;
+  padding: 12px;
+  background: #FFF;
+  border-radius: 3px;
+  margin-bottom: 17px;
+  font-size: 13px;
+  line-height: 18px;
+}
+#activities li p{
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+#activities li p .at{
+  color: gray;
+  display: block;
+}
+#activities header {
+  margin-bottom: 15px;
+}
+#activities header .img{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+  margin-right: 9px;
+  border: 1px solid #CCC;
+}
+#activities header .about{
+  float: left
+}
+#activities header .img img{
+  max-width: 40px;
+}
+#activities header h5{
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 700;
+}
+#activities header time{
+  color: #89919c;
+  font-size: 11px;
+}
