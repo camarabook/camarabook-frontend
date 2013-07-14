@@ -1,16 +1,22 @@
+
 {{#with deputado}}
-<ul>
-  <li>anexo: {{anexo}},</li>
-  <li>cadastro_id: {{cadastro_id}},</li>
-  <li>email: {{email}},</li>
-  <li>fone: {{fone}},</li>
-  <li>gabinete: {{gabinete}},</li>
-  <li>id: {{id}},</li>
-  <li>nome: {{nome}},</li>
-  <li>nome_parlamentar: {{nome_parlamentar}},</li>
-  <li>parlamentar_id: {{parlamentar_id}},</li>
-  <li>partido_id: {{partido_id}},</li>
-  <li>sexo: {{sexo}},</li>
-  <li>uf: {{uf}}</li>
-</ul>
+<aside>
+  <img class="img-polaroid" src="deputado.jpg" alt />
+  <div id="name">
+    <h2>Deputado {{nome_parlamentar}} <span class="realname">({{nome}})</span></h2>
+  </div>
+  <ul class="clearfix">
+    <li class="space">&nbsp;</li>
+    <li class="current"><a href="/{{id}}">Timeline</a></li>
+    <li><a href="/{{id}}/sobre">Sobre</a></li>
+    <li><a href="/{{id}}/projetos">Projetos</a></li>
+    <li><a href="/{{id}}/cota">Cota</a></li>
+    <li><a href="/{{id}}/discursos">Discursos</a></li>
+    <li><a href="/{{id}}/videos">Vídeos</a></li>
+    <li><a href="/{{id}}/audios">Áudios</a></li>
+  </ul>
+</aside>
 {{/with}}
+
+<div id="feed">
+</div>

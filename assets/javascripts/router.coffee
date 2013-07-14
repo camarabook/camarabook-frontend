@@ -1,9 +1,10 @@
 class Router extends Support.SwappingRouter
-  el: "#content"
+  el: "#main"
 
   routes:
     "deputados"                                                  : "deputadosIndex"
     "deputados/:id"                                              : "deputadosShow"
+    ":id"                                                        : "deputadosShow"
     ".*"                                                         : "deputadosIndex"
 
   deputadosIndex: ->

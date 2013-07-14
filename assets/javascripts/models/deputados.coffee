@@ -1,9 +1,9 @@
 class Deputado extends Backbone.Model
-  url: => "http://localhost:3000/deputados/#{@get('id')}"
+  url: => "http://api.#{window.location.host}/deputados/#{@get('id')}"
 
 class Deputados extends Backbone.Collection
   model: Deputado
-  url: "http://localhost:3000/deputados"
+  url: "http://api.#{window.location.host}/deputados"
 
 window.Deputado = Deputado
 window.Deputados = Deputados
