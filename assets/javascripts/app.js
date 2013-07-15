@@ -1,6 +1,6 @@
 //= require vendor/jquery
 //= require vendor/handlebars
-//= require vendor/handlebars.runtime
+//require vendor/handlebars.runtime
 //= require vendor/underscore
 //= require vendor/backbone
 //= require vendor/backbone-support
