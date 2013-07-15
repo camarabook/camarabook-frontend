@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 gem 'catapult'
-gem 'handlebars_assets'
-gem 'backbone-support'
-gem 'shotgun'
-gem 'pry'
-gem 'sass'
-gem 'rake'
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'sass'
+  gem 'rake'
+end

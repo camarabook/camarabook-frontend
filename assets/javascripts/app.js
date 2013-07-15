@@ -1,9 +1,9 @@
 //= require vendor/jquery
-//= require handlebars
-//= require handlebars.runtime
+//= require vendor/handlebars
+//= require vendor/handlebars.runtime
 //= require vendor/underscore
 //= require vendor/backbone
-//= require backbone-support
+//= require vendor/backbone-support
 //= require_tree .
 //= require_self
 

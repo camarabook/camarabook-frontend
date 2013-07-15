@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    backbone-support (0.3.0)
     catapult (0.0.4)
       coffee-script (~> 2.2.0)
       listen (~> 0.4.2)
@@ -21,10 +20,6 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.1.5)
-    handlebars_assets (0.6.5)
-      execjs (>= 1.2.9)
-      sprockets (>= 2.0.3)
-      tilt
     hike (1.2.1)
     listen (0.4.7)
       rb-fchange (~> 0.0.5)
@@ -69,9 +64,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  backbone-support
   catapult
-  handlebars_assets
   pry
   rake
   sass
