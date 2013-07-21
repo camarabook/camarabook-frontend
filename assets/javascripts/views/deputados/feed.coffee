@@ -3,8 +3,8 @@ window.DeputadosView ||= {}
 class DeputadosView.Feed extends Support.CompositeView
   template: JST["deputados/feed"]
 
-  initialize: ->
-    @feed = new DeputadoFeed @id
+  initialize: (@deputado)->
+    @feed = new DeputadoFeed @deputado.get('uri')
     @feed.fetch()
     @bindTo @feed, "reset change", @renderData
 
@@ -12,4 +12,4 @@ class DeputadosView.Feed extends Support.CompositeView
     return this
 
   renderData: =>
-    $(@el).html @template(activities: @feed.toJSON())
+    $(@el).html @template(activities: @feed.toJSON(), deputado: @deputado.toJSON())
