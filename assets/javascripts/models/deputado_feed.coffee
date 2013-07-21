@@ -1,8 +1,8 @@
 class DeputadoItemFeed extends Backbone.Model
 
 class DeputadoFeed extends Backbone.Collection
-  url: => "http://api.#{window.location.host}/deputados/#{@id}/feed"
+  url: => "http://api.#{window.location.host}/deputados/#{@uri}/feed"
   model: DeputadoItemFeed
-  initialize: (id) => @id = id
+  initialize: (uri) => @uri = uri
 
 window.DeputadoFeed = DeputadoFeed

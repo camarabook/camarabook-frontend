@@ -3,7 +3,7 @@ window.DeputadosView ||= {}
 class DeputadosView.Show extends Support.CompositeView
   template: JST["deputados/show"]
   initialize: ->
-    @deputado = new Deputado id: @id
+    @deputado = new Deputado uri: @id
     @deputado.fetch()
     @bindTo @deputado, "reset change", @render_data
 

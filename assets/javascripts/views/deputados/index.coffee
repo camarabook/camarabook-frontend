@@ -4,10 +4,13 @@ class DeputadosView.Index extends Support.CompositeView
   template: JST["deputados/index"]
 
   initialize: ->
-    @collection = new Deputados
-    @collection.fetch()
-    @bindTo @collection, "reset change", @render
+    @deputados = new Deputados
+    @deputados.fetch()
+    @bindTo @deputados, "reset change", @renderData
 
   render: =>
-    $(@el).html @template(deputados: @collection.toJSON())
     return this
+
+  renderData: =>
+    $(@el).html @template(deputados: @deputados.toJSON())
+    @render()

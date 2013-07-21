@@ -6,10 +6,10 @@ class DeputadosView.Feed extends Support.CompositeView
   initialize: ->
     @feed = new DeputadoFeed @id
     @feed.fetch()
-    @bindTo @feed, "reset change", @render_data
+    @bindTo @feed, "reset change", @renderData
 
   render: =>
     return this
 
-  render_data: =>
+  renderData: =>
     $(@el).html @template(activities: @feed.toJSON())
