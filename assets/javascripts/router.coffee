@@ -3,7 +3,6 @@ class Router extends Support.SwappingRouter
 
   routes:
     "deputados"                                                  : "deputadosIndex"
-    "deputados/:id"                                              : "deputadosShow"
     ":id"                                                        : "deputadosShow"
     ".*"                                                         : "deputadosIndex"
 
