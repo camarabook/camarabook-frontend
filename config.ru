@@ -19,21 +19,20 @@ class BackboneMiddleware
   end
 end
 
-asset_paths = ["app/assets/javascripts",
-               "vendor/assets/javascripts",
-               "lib/assets/javascripts",
-               "app/assets/stylesheets",
-               "vendor/assets/stylesheets",
-               "lib/assets/stylesheets"]
-$LOAD_PATH.each do |load_path|
-  asset_paths.each do |asset_path|
-    path = [load_path, '..', asset_path].join("/")
-    Catapult.environment.append_path path if File.directory? path
-  end
-end
+#asset_paths = ["app/assets/javascripts",
+               #"vendor/assets/javascripts",
+               #"lib/assets/javascripts",
+               #"app/assets/stylesheets",
+               #"vendor/assets/stylesheets",
+               #"lib/assets/stylesheets"]
+#$LOAD_PATH.each do |load_path|
+  #asset_paths.each do |asset_path|
+    #path = [load_path, '..', asset_path].join("/")
+    #Catapult.environment.append_path path if File.directory? path
+  #end
+#end
 
 require 'handlebars_assets'
-
 HandlebarsAssets::Config.template_namespace = 'JST'
 Catapult.environment.append_path HandlebarsAssets.path
 
