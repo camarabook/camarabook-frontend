@@ -1,9 +1,10 @@
 //= require vendor/jquery
+//= require vendor/spin
 //= require vendor/handlebars
-//require vendor/handlebars.runtime
 //= require vendor/underscore
 //= require vendor/backbone
 //= require vendor/backbone-support
+//= require loading
 //= require_tree .
 //= require_self
 
