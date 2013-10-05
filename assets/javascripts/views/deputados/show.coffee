@@ -10,7 +10,7 @@ class DeputadosView.Show extends Support.CompositeView
 
   render: =>
     $(@el).attr('id', "deputado-#{@id}")
-    @loading = new Loading(root: @el)
+    @loading = new Loading()
     return this
 
   renderData: =>
