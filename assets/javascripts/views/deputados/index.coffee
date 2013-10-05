@@ -2,6 +2,7 @@ window.DeputadosView ||= {}
 
 class DeputadosView.Index extends Support.CompositeView
   template: JST["deputados/index"]
+  id: 'deputados_index'
 
   initialize: ->
     @deputados = new Deputados
@@ -15,4 +16,7 @@ class DeputadosView.Index extends Support.CompositeView
   renderData: =>
     @loading.stop()
     $(@el).html @template(deputados: @deputados.toJSON())
-    @render()
+
+    searchOptions =
+      valueNames: ['name']
+    deputadoSearch = new List('deputados_index', searchOptions);
