@@ -15,7 +15,16 @@ $(document).ready(function(){
   $("a").live('click', function(event){
     href = $(event.currentTarget).attr("href");
     router.navigate(href, {trigger: true});
-    loading = new Loading()
+    loading = new Loading();
     event.preventDefault();
   });
+});
+
+Handlebars.registerHelper('hummanize_month', function(){
+  months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  return months[this.month];
+});
+
+Handlebars.registerHelper('post_time', function(){
+  return new Date(this.data_emissao);
 });
