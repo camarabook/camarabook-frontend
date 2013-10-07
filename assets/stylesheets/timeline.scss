@@ -1,7 +1,40 @@
 #feed{
   float: right
 }
-#activities li{
+#feed ol{
+  margin: 0;
+}
+
+#activities p.header{
+  text-align: left;
+  position: relative;
+}
+#activities p.header span.text{
+  background-color: #e9eaed;
+  color: #89919c;
+  text-shadow: 0 1px 0 #f6f7f8;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 0 8px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  top: -8px;
+}
+
+#activities p.header .line{
+  border-bottom: 1px solid #f6f7f8;
+  border-top: 1px solid #d3d7dc;  display: block;
+  height: 0;
+  position: relative;
+}
+
+#activities li.year{
+  width: 512px;
+}
+
+#activities .month ol li{
   color: #37404e;
   width: 512px;
   border: 1px solid #d3d6db;
@@ -12,19 +45,19 @@
   font-size: 13px;
   line-height: 18px;
 }
-#activities li p{
+#activities .month ol li p{
   font-size: 13px;
   line-height: 18px;
   margin: 0;
 }
-#activities li p .at{
+#activities .month ol li p .at{
   color: gray;
   display: block;
 }
-#activities header {
+#activities .month ol li header {
   margin-bottom: 15px;
 }
-#activities header .img{
+#activities .month ol li header .img{
   width: 40px;
   height: 40px;
   border-radius: 5px;
@@ -33,18 +66,18 @@
   margin-right: 9px;
   border: 1px solid #CCC;
 }
-#activities header .about{
+#activities .month ol li header .about{
   float: left
 }
-#activities header .img img{
+#activities .month ol li header .img img{
   max-width: 40px;
 }
-#activities header h5{
+#activities .month ol li header h5{
   font-size: 12px;
   line-height: 19px;
   font-weight: 700;
 }
-#activities header time{
+#activities .month ol li header time{
   color: #89919c;
   font-size: 11px;
 }
