@@ -9,7 +9,7 @@ class DeputadosView.Feed extends Support.CompositeView
     @bindTo @feed, "reset change", @renderData
 
   render: =>
-    @loading = new Loading(root: @el)
+    @loading = new Loading()
     return this
 
   renderData: =>
