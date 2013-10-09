@@ -21,7 +21,7 @@ $(document).ready(function(){
 });
 
 Handlebars.registerHelper('hummanize_month', function(){
-  months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  months = [0, "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   return months[this.month];
 });
 
