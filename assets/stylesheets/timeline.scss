@@ -67,8 +67,16 @@
   border: 1px solid #CCC;
 }
 #activities .month ol li header .about{
-  float: left
+  float: left;
+  width: 435px;
+
 }
+
+#activities .month ol li video{
+  width: 480px !important;
+  height: 270px !important;
+}
+
 #activities .month ol li header .img img{
   max-width: 40px;
 }
@@ -80,4 +88,10 @@
 #activities .month ol li header time{
   color: #89919c;
   font-size: 11px;
+}
+.ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }

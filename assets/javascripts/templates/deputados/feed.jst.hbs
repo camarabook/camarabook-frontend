@@ -14,17 +14,27 @@
         </p>
         <ol>
           {{#each data}}
-          <li class="money">
+          <li class="{{type}}">
           <header class="clearfix">
           <div class="img">
-            <img src="{{../../../deputado.image_url}}" alt />
+            <img src="{{subject.image}}" alt />
           </div>
           <div class="about">
-            <h5>{{../deputado.nome_parlamentar}}</h5>
+            <h5 class="ellipsis"><a href="{{subject.url}}}">{{subject.name}}</a>{{#in}} <i class="icon-caret-right"></i> <a href="{{url}}" >{{name}}</a>{{/in}}</h5>
             <time>{{post_time}}</time>
           </div>
           </header>
-          <p>Gastei <span class="value">R$ {{valor_documento}}</span> com <span class="object">{{descricao}}</span>- <span class="at"> — em <a href="/beneficiario/{{cnpjcpf}}">{{beneficiario}}</a></span></p>
+          <p>{{verb}} <span class="value">{{value}}</span>{{preposition}}<span class="object">{{object}}</span>
+          {{log object_url}}
+          {{#ifvalue type 'video'}}
+            <video id="{{id}}" class="video-js vjs-default-skin"
+              controls preload="auto" width="640" height="264"
+              poster=""
+              data-setup=''>
+              <source src="{{video_url}}" type='video/mp4' />
+              </video>
+          {{/ifvalue}}
+          <span class="at"> — em <a href="{{location.url}}}">{{location.title}}</a></span></p>
           </li>
           {{/each}}
         </ol>
