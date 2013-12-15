@@ -13,7 +13,7 @@ $(document).ready(function(){
   window.router = new Router();
   Backbone.history.start({pushState: true});
   document.createElement('video');document.createElement('audio');
-  $("a").live('click', function(event){
+  $("a:not(.nolink)").live('click', function(event){
     href = $(event.currentTarget).attr("href");
     router.navigate(href, {trigger: true});
     loading = new Loading();
