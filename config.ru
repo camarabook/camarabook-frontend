@@ -2,6 +2,8 @@ require 'yaml'
 require 'bundler/setup'
 Bundler.require
 
+require './api'
+
 class BackboneMiddleware
   def initialize(app)
     @app = app
@@ -9,7 +11,7 @@ class BackboneMiddleware
 
   def call(env)
     request = Rack::Request.new(env)
-    if request.path !~ %r{^/assets}
+    if request.path !~ %r{^/assets|^/api}
       env['REQUEST_PATH'] = '/'
       env['REQUEST_URI'] = '/'
       env['PATH_INFO'] = '/'
@@ -38,4 +40,5 @@ Catapult.environment.append_path HandlebarsAssets.path
 
 
 use BackboneMiddleware
+use ApiApplication
 run Catapult.app
