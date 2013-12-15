@@ -4,14 +4,15 @@ class Router extends Support.SwappingRouter
   routes:
     "deputados"                                                  : "deputadosIndex"
     ":id"                                                        : "deputadosShow"
+    ":id/:page"                                                  : "deputadosShow"
     ".*"                                                         : "deputadosIndex"
 
   deputadosIndex: ->
     view = new DeputadosView.Index
     @swap(view)
 
-  deputadosShow: (id)->
-    view = new DeputadosView.Show(id: id)
+  deputadosShow: (id, page)->
+    view = new DeputadosView.Show(id: id, page: page)
     @swap(view)
 
 window.Router = Router
