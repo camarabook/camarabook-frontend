@@ -10,7 +10,7 @@ class DeputadosView.Index extends Support.CompositeView
     @bindTo @deputados, "reset change", @renderData
 
   render: =>
-    @loading = new Loading()
+    @loading = new Loading(@el)
     return this
 
   renderData: =>
