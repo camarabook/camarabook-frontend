@@ -15,6 +15,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    curb (0.8.5)
     daemons (1.1.9)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -69,6 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   catapult
+  curb
   handlebars_assets
   pry
   rake
