@@ -81,6 +81,11 @@
           {{/each}}
         </ul>
       {{/if}}
+      {{#if texts}}
+        {{#each texts}}
+          <p>{{this}}</p>
+        {{/each}}
+      {{/if}}
     </li>
     {{/if}}
   {{/each}}
