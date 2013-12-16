@@ -1,22 +1,20 @@
-
 {{#with deputado}}
-<aside>
-  <img class="img-polaroid" src="{{image_url}}" alt />
-  <div id="name">
-    <h2>Deputado {{nome_parlamentar}} <span class="realname">({{nome}})</span></h2>
-  </div>
-  <ul id="top_menu" class="clearfix">
-    <li class="space">&nbsp;</li>
-    <li class="current"><a class="nolink" id="feed" href="/{{uri}}">Timeline</a></li>
-    <li><a class="nolink" id="about" href="/{{uri}}/sobre">Sobre</a></li>
-    <li><a class="nolink" id="project" href="/{{uri}}/projetos">Projetos</a></li>
-    <li><a class="nolink" id="cota" href="/{{uri}}/cota">Cota</a></li>
-    <li><a class="nolink" id="discursos" href="/{{uri}}/discursos">Discursos</a></li>
-    <li><a class="nolink" id="videos" href="/{{uri}}/videos">Vídeos</a></li>
-    <li><a class="nolink" id="audios" href="/{{uri}}/audios">Áudios</a></li>
-  </ul>
-</aside>
+  <aside>
+    <img class="img-polaroid" src="{{image_url}}" alt />
+    <div id="name">
+      <h2>Deputado {{nome_parlamentar}} <span class="realname">({{nome}})</span></h2>
+    </div>
+    <ul id="top_menu" class="clearfix">
+      <li class="space">&nbsp;</li>
+      <li class="current"><a class="nofollow" id="feed" href="/{{uri}}">Timeline</a></li>
+      <li><a class="nofollow" id="about" href="/{{uri}}/sobre">Sobre</a></li>
+      <li><a class="nofollow" id="project" href="/{{uri}}/projetos">Projetos</a></li>
+      <li><a class="nofollow" id="cota" href="/{{uri}}/cota">Cota</a></li>
+      <li><a class="nofollow" id="discursos" href="/{{uri}}/discursos">Discursos</a></li>
+      <li><a class="nofollow" id="videos" href="/{{uri}}/videos">Vídeos</a></li>
+      <li><a class="nofollow" id="audios" href="/{{uri}}/audios">Áudios</a></li>
+    </ul>
+  </aside>
+  <div class="fragment" data-page-url="/{{uri}}/sobre" data-page-id="about" id="page_about">about</div>
+  <div class="fragment" data-page-url="/{{uri}}"  data-page-id="feed" id="page_feed"></div>
 {{/with}}
-
-<div class="fragment" data-page-url="/{{uri}}/sobre" data-page-id="about">about</div>
-<div class="fragment" data-page-url="/{{uri}}"  data-page-id="feed"></div>
