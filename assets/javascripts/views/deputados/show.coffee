@@ -10,21 +10,23 @@ class DeputadosView.Show extends Support.CompositeView
     @bindTo @deputado, "reset change", @renderData
 
   events:
-    'click #top_menu a': 'openFragment'
+    'click #top_menu a, .profilelink': 'openFragment'
 
   openFragment: (e)->
     e.preventDefault()
     page = e.currentTarget.id
+    $(".fragment").hide()
+    @$("[data-page-id=#{page}]").show()
     @openDeputadoPage(page)
 
   openDeputadoPage: (page)->
+    console.log(this)
     @_leaveChildren()
     page = 'feed' unless page
     view = @pageView(page, @deputado)
-    el = @$("[data-page-id=#{page}]")
     @$('.current').removeClass('current')
     @$("##{page}").parent().addClass('current')
-    @renderChildInto(view, el)
+    @renderChildInto(view, @$("[data-page-id=#{page}]"))
 
   render: =>
     $(@el).attr('id', "deputado-#{@id}")
@@ -37,8 +39,10 @@ class DeputadosView.Show extends Support.CompositeView
     @openDeputadoPage(@page)
     @loading.stop()
 
-
   pageView: (page, params)->
+    href = @$("[data-page-id=#{page}]").data("page-url")
+    router = new Router()
+    router.navigate(href, {trigger: false});
     classView = page.toLowerCase().replace /(?:^|\s|-)\S/g, (c)-> c.toUpperCase()
     new DeputadosView[classView](params)
 

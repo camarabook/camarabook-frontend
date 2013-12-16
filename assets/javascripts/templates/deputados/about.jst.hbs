@@ -1,3 +1,45 @@
-About
+{{#with deputado}}
+<div class="header">
+  <h3>
+    <i class="icon-user"></i>
+    <a class="profilelink" href="/{{uri}}">Sobre</a>
+  </h3>
+</div>
+{{/with}}
 
-{{deputado}}
+<ul>
+  {{#each about}}
+    <li>
+      <h4>{{title}}</h4>
+      {{#if table}}
+        <table>
+          {{#each table}}
+            <tr>
+              <th>{{label}}</th>
+              <td>{{text}}</td>
+            </tr>
+          {{/each}}
+        </table>
+      {{/if}}
+      {{#if list}}
+        <ul class='list'>
+          {{#each list}}
+          <li>
+          <h5>{{title}}</h5>
+          <ul>
+            {{#each itens}}
+            <li>
+            <strong>{{title}}</strong>
+            {{#each texts}}
+            <p> {{this}} </p>
+            {{/each}}
+            </li>
+            {{/each}}
+          </ul>
+          </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
