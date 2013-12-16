@@ -1,5 +1,7 @@
 /*
- *= require bootstrap
- *= require nprogress
+ *= require ./vendor/socialcamara-font
+ *= require_tree ./vendor
+ *= require vendor/nprogress
  *= require util
- *= require_tree .*/
+ *= require_tree .
+ */
