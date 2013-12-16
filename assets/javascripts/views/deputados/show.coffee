@@ -15,17 +15,16 @@ class DeputadosView.Show extends Support.CompositeView
   openFragment: (e)->
     e.preventDefault()
     page = e.currentTarget.id
-    $(".fragment").hide()
-    @$("[data-page-id=#{page}]").show()
     @openDeputadoPage(page)
 
   openDeputadoPage: (page)->
-    console.log(this)
     @_leaveChildren()
     page = 'feed' unless page
     view = @pageView(page, @deputado)
     @$('.current').removeClass('current')
     @$("##{page}").parent().addClass('current')
+    $(".fragment").hide()
+    @$("[data-page-id=#{page}]").show()
     @renderChildInto(view, @$("[data-page-id=#{page}]"))
 
   render: =>
