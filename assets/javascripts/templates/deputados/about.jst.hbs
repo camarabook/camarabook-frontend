@@ -7,8 +7,10 @@
 </div>
 {{/with}}
 
-<ul>
+<div id="abouts">
+<ul id="about-main">
   {{#each about}}
+    {{#if main}}
     <li>
       <h4>{{title}}</h4>
       {{#if table}}
@@ -41,5 +43,46 @@
         </ul>
       {{/if}}
     </li>
+    {{/if}}
   {{/each}}
 </ul>
+
+<ul id="about-secondary">
+  {{#each about}}
+    {{#if secondary}}
+    <li>
+      <h4>{{title}}</h4>
+      {{#if table}}
+        <table>
+          {{#each table}}
+            <tr>
+              <th>{{label}}</th>
+              <td>{{text}}</td>
+            </tr>
+          {{/each}}
+       </table>
+      {{/if}}
+      {{#if list}}
+        <ul class='list'>
+          {{#each list}}
+          <li>
+          <h5>{{title}}</h5>
+          <ul>
+            {{#each itens}}
+            <li>
+            <strong>{{title}}</strong>
+            {{#each texts}}
+            <p> {{this}} </p>
+            {{/each}}
+            </li>
+            {{/each}}
+          </ul>
+          </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>

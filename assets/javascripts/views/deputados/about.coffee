@@ -15,3 +15,4 @@ class DeputadosView.About extends Support.CompositeView
   renderData: =>
     @loading.stop()
     $(@el).html @template(deputado: @deputado.toJSON(), about: @about.toJSON())
+    truncateText(@$("ul.list li"), 20)

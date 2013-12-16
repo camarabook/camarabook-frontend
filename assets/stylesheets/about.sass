@@ -19,9 +19,29 @@
       font-size: 21px
       color: #ADB3BC
       margin-right: 2px
-  ul
-    margin: 0 25px
+
+  #abouts
+    padding: 0 25px 20px 25px
     overflow: hidden
+
+  #about-main, #about-secondary
+    width: 371px
+    float: left
+    margin: 0
+    > li
+      padding-bottom: 15px
+      margin-bottom: 15px
+      border-bottom: 1px solid #D3D6DB
+    > li:last-child
+      border: none
+
+  #about-main
+    border-right: 1px solid #D3D6DB
+    padding-right: 15px
+  #about-secondary
+    > li
+      padding-left: 15px
+
   ul.list
     margin: 0
     ul
@@ -37,9 +57,8 @@
       text-decoration: underline
 
   li
-    padding: 15px
-    float: left
-    width: 367px
+    //padding: 15px
+    //float: left
   h4
     color: #37404E
     font: bold 16px 'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif
