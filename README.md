@@ -3,7 +3,7 @@
 
 ## Frontend
 
-Esse repositório consiste no frontend do projeto,([caso esteja interessado no API](https://github.com/dukex/socialcamara-api)), é responsabilidade desse frontend buscar os dados na API e construir as views do projeto.
+Esse repositório consiste no frontend do projeto([caso esteja interessado no API](https://github.com/dukex/socialcamara-api)), é responsabilidade desse frontend buscar os dados na API e construir as views do projeto.
 
 Esse projeto é feito com Backbone e um [pequeno proxy](https://github.com/dukex/socialcamara-site/blob/master/api.rb) para api em ruby.
 
