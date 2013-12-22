@@ -4,7 +4,7 @@ class DeputadosView.Show extends Support.CompositeView
   template: JST["deputados/show"]
   initialize: (options)->
     {page: @page} = options
-    @page = {"sobre": "about"}[@page]
+    @page = {"sobre": "about", "projetos": "propositions"}[@page]
     @deputado = new Deputado uri: @id
     @deputado.fetch()
     @bindTo @deputado, "reset change", @renderData

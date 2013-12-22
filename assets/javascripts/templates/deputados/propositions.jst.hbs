@@ -1,0 +1,26 @@
+{{#with deputado}}
+<div class="section_header">
+  <h3>
+    <i class="icon-doc-text"></i>
+    <a class="profilelink" href="/{{uri}}">Projetos</a>
+  </h3>
+</div>
+{{/with}}
+
+<div class="section">
+  <ol>
+    {{#each propositions }}
+    <li>
+    <h4><a class="nofollow" href="{{url}}">{{name}}<i class="icon-link-ext"></i></a></h4>
+    <div class="meta">
+      <span class="author">
+        By <a href="/{{../deputado.uri}}"> {{../deputado.nome_parlamentar}}</a>
+        <time>{{presentations_at_formated}}</time>
+      </span>
+    </div>
+    <div class="body">{{truncate body}} ... <a class="nofollow" href="{{url}}">Ver mais<i class="icon-link-ext"></i></a></div>
+    </li>
+    {{/each}}
+  </ol>
+</div>
+
