@@ -1,7 +1,12 @@
-#feed{
+#page_feed{
+  background: transparent;
+  border: none
+}
+
+#page_feed{
   float: right
 }
-#feed ol{
+#page_feed ol{
   margin: 0;
 }
 
@@ -69,7 +74,6 @@
 #activities .month ol li header .about{
   float: left;
   width: 435px;
-
 }
 
 #activities .month ol li video{
