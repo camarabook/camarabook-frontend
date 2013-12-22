@@ -41,8 +41,13 @@ Handlebars.registerHelper('hummanize_month', function(){
 
 
 Handlebars.registerHelper('post_time', function(){
-  return new Date(this.published_at);
+  return moment(this.published_at).format("dddd, D MMMM YYYY, hh:mm");
 });
+
+Handlebars.registerHelper('presentations_at_formated', function(){
+   return moment(this.presentations_at).format("dddd, D MMMM YYYY, hh:mm");
+});
+
 
 Handlebars.registerHelper('preposition', function(){
   switch(this.type){
@@ -50,10 +55,18 @@ Handlebars.registerHelper('preposition', function(){
       return " com ";
     case 'video':
       return " um ";
+    case 'project':
+      return " a ";
     default:
       return "";
   }
 });
+
+Handlebars.registerHelper('truncate', function(body){
+  return body.substring(0,100);
+});
+
+
 
 Handlebars.registerHelper('value', function(){
   return this.value && "R$ " + this.value.formatMoney(2, ',', '.') + "";
