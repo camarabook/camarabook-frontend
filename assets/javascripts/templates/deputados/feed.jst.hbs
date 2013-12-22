@@ -3,14 +3,16 @@
   <li class="year">
     <p class="header">
       <span class="line"></span>
-      <span class="text">No ano {{year}} gastei <span class="value">R$ {{total}}</span>
+      <span class="text">{{year}}</span>
+      <!--<span class="text">No ano {{year}} gastei <span class="value">R$ {{total}}</span>-->
     </p>
     <ol class="month">
       {{#each month}}
       <li>
         <p class="header">
           <span class="line"></span>
-          <span class="text">Em {{hummanize_month}} gastei <span class="value">R$ {{total}}</span>
+          <span class="text">{{hummanize_month}}</span>
+          <!--<span class="text">Em {{hummanize_month}} gastei <span class="value">R$ {{total}}</span>-->
         </p>
         <ol>
           {{#each data}}
@@ -25,7 +27,7 @@
           </div>
           </header>
           <p>{{verb}} <span class="value">{{value}}</span>{{preposition}}<span class="object">{{object}}</span>
-          {{log object_url}}
+          {{#content}}<p class="content">{{this}}</p>{{/content}}
           {{#ifvalue type 'video'}}
             <video id="{{id}}" class="video-js vjs-default-skin"
               controls preload="auto" width="640" height="264"
@@ -35,6 +37,7 @@
               </video>
           {{/ifvalue}}
           <span class="at"> — em <a href="{{location.url}}}">{{location.title}}</a></span></p>
+          <div class="fb-comments" data-href="http://localhost:3000/nelson-marquezelli/posts/{{id}}" data-width="486" data-numposts="5" data-colorscheme="light"></div>
           </li>
           {{/each}}
         </ol>
@@ -88,3 +91,14 @@
   <p>Viajei para <span class="to">Fernando de Noronha</span></p>
   </li> -->
 </ol>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=472723802847630";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
