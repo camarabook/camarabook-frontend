@@ -21,6 +21,8 @@ $(document).ready(function(){
   });
 });
 
+moment.lang("pt-br");
+
 var truncateText = function(elements, size){
   _.each(elements, function(el){
     Cutter.run(el, el, size, {more:"Ver mais"}, {more:"nofollow more"});
