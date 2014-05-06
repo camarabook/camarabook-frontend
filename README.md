@@ -1,5 +1,5 @@
 # Social Câmara
-## A rede social preferida dos deputados da cârama!
+## A rede social preferida dos deputados da câmara!
 
 ## Frontend
 
