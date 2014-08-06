@@ -1,0 +1,98 @@
+aside{
+  padding-top: 15px;
+  overflow: hidden;
+  position: relative;
+}
+aside img{
+  display: block;
+  float: left;
+  width: 140px;
+  position: relative;
+  z-index: 5;
+  margin: 0 0 0 15px;
+}
+aside ul{
+  position: relative;
+  border: 1px solid #d3d6db;
+  background: #FFF;
+  clear: both;
+  margin: 0;
+  top: -25px;
+  z-index: 4;
+}
+aside ul {
+  zoom: 1;
+  border-radius: 0 0 3px 3px
+}
+aside ul li{
+  zoom: 1;
+  float: left
+}
+aside ul li.space{
+  width: 180px;
+
+  border-right: 1px solid #e9eaed;
+  height: 43px;
+}
+aside ul li a{
+  border-right: 1px solid #e9eaed;
+  float: left;
+  font-size: 13px;
+  font-weight: bold;
+  height: 43px;
+  line-height: 3.3;
+  padding: 0 17px;
+  position: relative;
+  vertical-align: middle;
+  display: block;
+  white-space: nowrap;
+  z-index: 3;
+}
+aside ul li a:hover{
+  background: #f6f7f8;
+  text-decoration: none;
+}
+aside ul li.current a::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  left: 40%;
+  bottom: -2px;
+  margin-left: 0px;
+  border-bottom: 9px solid #e9eaed;
+  z-index: 5;
+}
+aside ul li a span{
+  background-image: url(active.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -713px -42px;
+  bottom: -2px;
+  display: none;
+  height: 9px;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  width: 17px;
+}
+aside ul li.current a{
+  color: #000;
+}
+#name { background: #d5d6d9; padding: 5px 10px; overflow: hidden; margin-top: 95px; float: left; width: auto }
+#name h2 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+line-height: 30px;text-shadow: 0 0 3px rgba(0,0,0,0.8); color: #FFF }
+#name h2 .realname{
+  font-size: 20px;
+  font-weight: normal;
+  white-space: nowrap;
+  display: block;
+}
+
+
+

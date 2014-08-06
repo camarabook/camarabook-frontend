@@ -1,0 +1,35 @@
+* { padding: 0; margin: 0; list-style: none; }
+body{ background: #e9eaed; text-rendering: optimizelegibility;font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-size: 11px;color: #333;
+  line-height: 1.28;
+overflow: auto !important }
+body .in { max-width: 851px; margin-left: auto; margin-right: auto; overflow: hidden; }
+.topbar h3 a, .topbar .brand{ padding: 10px 0; margin: 0; }
+.topbar {
+  z-index: 1000 !important;
+}
+
+#main { margin-top: 40px }
+#content { float: right; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+footer{
+  p {
+    text-align: center;
+    color: #000;
+    font-size: 11px;
+    .heart{
+      color: red;
+    }
+  }
+}
+
