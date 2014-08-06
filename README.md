@@ -1,19 +1,18 @@
 # Camarabook
+## A rede social preferida dos deputados da câmara!
 
-This README outlines the details of collaborating on this Ember application.
+## Instalação
 
-## Installation
-
-* `git clone` this repository
+* `git clone git@github.com:camarabook/camarabook-frontend.git`
 * `npm install`
 * `bower install`
 
-## Running
+## Rodando
 
 * `ember server`
-* Visit your app at http://localhost:4200.
+* Visite a app em http://localhost:4200.
 
-## Running Tests
+## Rodando Tests
 
 * `ember test`
 * `ember test --server`
@@ -22,4 +21,13 @@ This README outlines the details of collaborating on this Ember application.
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+Para mais informações sobre ember-cli, visite [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+
+
+## Contribua
+
+1. Fork o projeto
+2. Crie um feature-branch ($ git checkout -b myfeaturebranch master)
+3. Trabalhe com commits pequenos e objetivos
+4. Atualiza esse branch no github ($ git push origin myfeaturebranch)
+5. Mande um pull-request
