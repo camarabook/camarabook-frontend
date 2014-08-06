@@ -5,9 +5,7 @@ var compileSass = require('broccoli-sass');
 
 var app = new EmberApp();
 
-var tree = app.toTree();
-compileSass([tree], 'assets/app.sass', 'assets/app.css');
-
+app.import("vendor/underscore/underscore.js");
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
@@ -21,4 +19,8 @@ compileSass([tree], 'assets/app.sass', 'assets/app.css');
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+var tree = app.toTree();
+
 module.exports = tree;
+
+compileSass([tree], 'assets/app.sass', 'assets/app.css');
