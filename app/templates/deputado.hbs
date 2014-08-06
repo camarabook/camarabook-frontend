@@ -15,7 +15,9 @@
       <li><a class="nofollow" id="audios" href="/{{uri}}/audios">Áudios</a></li>
     </ul>
   </aside>
-  <div class="fragment" data-page-url="/{{uri}}/sobre" data-page-id="about" id="page_about">about</div>
+  <div id="page_about" class="fragment" >
+    {{render 'deputado-about' this}}
+  </div>
   <div class="fragment" data-page-url="/{{uri}}/projetos"  data-page-id="propositions" id="page_propositions"></div>
   <div class="fragment" data-page-url="/{{uri}}"  data-page-id="feed" id="page_feed"></div>
 {{/with}}
