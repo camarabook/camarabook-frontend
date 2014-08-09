@@ -1,0 +1,26 @@
+{{#with model}}
+  <aside>
+    <img class="img-polaroid" {{bind-attr src=image_url}} alt />
+    <div id="name">
+      <h2>Deputado {{name}} {{#if haveNick}}<span class="realname">({{real_name}})</span>{{/if}}</h2>
+    </div>
+    <ul id="top_menu" class="clearfix">
+      <li class="space">&nbsp;</li>
+
+      <li class="js-menu__item js-menu__feed">
+        {{#link-to 'parliamentarian' this}}Timeline{{/link-to}}
+      </li>
+      <li class="js-menu__item js-menu__about">
+        {{#link-to 'parliamentarian.about' this}}Sobre{{/link-to}}
+      </li>
+      <!--<li><a class="nofollow" id="propositions" href="/{{uri}}/projetos">Projetos</a></li>
+      <li><a class="nofollow" id="cota" href="/{{uri}}/cota">Cota</a></li>
+      <li><a class="nofollow" id="discursos" href="/{{uri}}/discursos">Discursos</a></li>
+      <li><a class="nofollow" id="videos" href="/{{uri}}/videos">Vídeos</a></li>
+      <li><a class="nofollow" id="audios" href="/{{uri}}/audios">Áudios</a></li>-->
+    </ul>
+  </aside>
+
+  {{outlet}}
+{{/with}}
+
