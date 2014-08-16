@@ -6,6 +6,7 @@ var compileSass = require('broccoli-sass');
 var app = new EmberApp();
 
 app.import("vendor/underscore/underscore.js");
+app.import("vendor/bourbon/dist/_bourbon.scss");
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
