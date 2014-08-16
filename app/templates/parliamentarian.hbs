@@ -1,8 +1,8 @@
 {{#with model}}
   <aside>
-    <img class="img-polaroid" {{bind-attr src=image_url}} alt />
+    <img class="img-polaroid" {{bind-attr src=image}} alt />
     <div id="name">
-      <h2>Deputado {{name}} {{#if haveNick}}<span class="realname">({{real_name}})</span>{{/if}}</h2>
+      <h2>{{real_name}} <span>({{parliamenratian_name}})</span></h2>
     </div>
     <ul id="top_menu" class="clearfix">
       <li class="space">&nbsp;</li>

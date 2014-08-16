@@ -3,10 +3,14 @@ var attr = DS.attr;
 
 export default DS.Model.extend({
   name: attr('string'),
-  real_name:  attr('string'),
-  about: attr('about'),
-  haveNick: function(){
-    return this.get('name') !== this.get('real_name');
-  }.property('name', 'real_name'),
-  image_url: attr('string'),
+  other_names: attr(),
+  image: attr('string'),
+
+  real_name: function(){
+    return this.get('other_names')[0].name;
+  }.property('other_names'),
+
+  parliamenratian_name: function() {
+   return "Deputado " + this.get('name');
+  }.property("name")
 });
