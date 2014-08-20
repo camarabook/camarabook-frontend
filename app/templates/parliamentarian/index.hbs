@@ -1,109 +1,27 @@
-<div class="fragment"  id="page_feed">
+<div class="fragment" id="page_feed">
 <ol id="activities">
-  {{#each model.activities}}
-  <li class="year">
-    <p class="header">
-    <span class="line"></span>
-    <span class="text">{{year}}</span>
-    <!--<span class="text">No ano {{year}} gastei <span class="value">R$ {{total}}</span>-->
-    </p>
-    <ol class="month">
-      {{#each month}}
-      <li>
-        <p class="header">
-        <span class="line"></span>
-        <span class="text">{{hummanize_month}}</span>
-        <!--<span class="text">Em {{hummanize_month}} gastei <span class="value">R$ {{total}}</span>-->
-        </p>
-        <ol>
-          {{#each data}}
-          <li class="{{type}}">
-            <header class="clearfix">
-              <div class="img">
-                <img {{bind-attr src=subject.image}} alt />
-              </div>
-              <div class="about">
-                <h5 class="ellipsis"><a href="{{subject.url}}">{{subject.name}}</a>{{#in}} <i class="icon-caret-right"></i> <a href="{{url}}" >{{name}}</a>{{/in}}</h5>
-                <time>{{post_time}}</time>
-              </div>
-            </header>
-            <p>{{verb}} <span class="value">{{value}}</span>{{preposition}}<span class="object">{{object}}</span>
-            {{#content}}<p class="content">{{this}}</p>{{/content}}
-            {{#ifvalue type 'video'}}
-            <video id="{{id}}" class="video-js vjs-default-skin"
-                               controls preload="auto" width="640" height="264"
-                                                                   poster=""
-                                                                   data-setup=''>
-              <source src="{{video_url}}" type='video/mp4' />
-            </video>
-            {{/ifvalue}}
-            <span class="at"> — em <a href="{{location.url}}">{{location.title}}</a></span></p>
-            <div class="fb-comments" data-href="http://localhost:3000/nelson-marquezelli/posts/{{id}}" data-width="486" data-numposts="5" data-colorscheme="light"></div>
-          </li>
-          {{/each}}
-        </ol>
-      </li>
-      {{/each}}
-    </ol>
+  {{#each model}}
+  <li class="activity">
+    <header class="clearfix">
+      <div class="img">
+        <img {{bind-attr src=author.image}} />
+      </div>
+      <div class="about">
+        <h5 class="ellipsis">
+          {{#link-to 'parliamentarian' author.id}}
+          {{author.name}}
+          {{/link-to}}
+           <span class="at">na <a href="{{location.url}}">{{location.name}}</a></span>
+        </h5>
+        <time>{{humanize-time published_at}}</time>
+      </div>
+    </header>
+    <p>{{content.verb}} <span class="value">{{humanize-price content.value}}</span> {{{content.text}}} </p>
+    <div class="social-tools">
+
+    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
+     <div class="fb-comments" data-href="http://localhost:3000/nelson-marquezelli/posts/{{id}}" data-width="512" data-numposts="5" data-colorscheme="light"></div>
+     </div>
   </li>
   {{/each}}
-  <!--         <li class="text">
-    <header class="clearfix">
-    <div class="img">
-    <img src="deputado.jpg" alt />
-    </div>
-    <div class="about">
-    <h5>Deputado TIRIRICA</h5>
-    <time>1 dia atrás</time>
-    </div>
-    </header>
-    <p>Sapiente direct trade VHS eu. Magna anim in mlkshk lomo williamsburg. Gluten-free synth lomo craft beer bespoke, flexitarian pop-up organic hoodie banksy aliquip. Mcsweeney's single-origin coffee deserunt brooklyn chambray. Mixtape aute banh mi, non elit pop-up aesthetic pinterest commodo chillwave beard street art pour-over sunt scenester. Incididunt truffaut craft beer magna culpa cliche. Before they sold out jean shorts godard readymade, vinyl consectetur adipisicing. </p>
-    <h4 class="at">Discurso na Plenaria sobre Direitos Humanos</h4>
-    <a href="#">ver integra</a>
-    </li>
-    <li class="video">
-    <header class="clearfix">
-    <div class="img">
-    <img src="deputado.jpg" alt />
-    </div>
-    <div class="about">
-    <h5>Deputado TIRIRICA</h5>
-    <time>2 dias atrás</time>
-    </div>
-    </header>
-    <p>Video meu discusão na Plenaria sobre Direitos Humanos</p>
-    <span class="with">- Com
-    <a href="#">João Pereira</a>
-    <a href="#">Maria do Carmo</a>
-    <a href="#">Vitor Leonardo</a>
-    <a href="#">Sussane Pereira</a>
-    </span>
-    </li>
-    <li class="travel">
-    <header class="clearfix">
-    <div class="img">
-    <img src="deputado.jpg" alt />
-    </div>
-    <div class="about">
-    <h5>Deputado TIRIRICA</h5>
-    <time>13 dias atrás</time>
-    </div>
-    </header>
-    <p>Viajei para <span class="to">Fernando de Noronha</span></p>
-    </li> -->
 </ol>
-
-
-<!--<div id="fb-root"></div>-->
-<!--<script>(function(d, s, id) {-->
-<!--var js, fjs = d.getElementsByTagName(s)[0];-->
-  <!--if (d.getElementById(id)) return;-->
-  <!--js = d.createElement(s); js.id = id;-->
-  <!--js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=472723802847630";-->
-  <!--fjs.parentNode.insertBefore(js, fjs);-->
-  <!--}(document, 'script', 'facebook-jssdk'));</script>-->
-
-</div>
-
-
-
