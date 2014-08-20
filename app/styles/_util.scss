@@ -15,6 +15,8 @@ body .in { max-width: 851px; margin-left: auto; margin-right: auto; overflow: hi
 }
 
 footer{
+   clear: both;
+display: block;
   p {
     text-align: center;
     color: #000;
