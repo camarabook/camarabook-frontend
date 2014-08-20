@@ -13,6 +13,7 @@
     "ember-qunit-notifications": "^0.0.3",
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
     "bourbon": "~4.0.2",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "moment": "~2.8.1"
   }
 }
