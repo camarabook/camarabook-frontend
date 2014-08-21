@@ -1,25 +1,34 @@
-/* global Ember */
+/* global Ember,_ */
 
 import DS from 'ember-data';
 
 var AboutProcess = Ember.Object.extend({
   init: function() {
-    switch (this.get('section_key')) {
-      case "aeafc8f34732641553799fb8ca590b9f":
-      case "96fe59d4857f07b3a2a996168029eb37":
-      case "bc16af5126991cfd262aae5b58da37e0":
-      case "d928cebb408327c4f1b57ffd107864bb":
-      case "f7fa4c0548d3459a9debadfac3180220":
+    "use strict";
+    var title = this.get('title').trim();
+    if(title === "") {
+      return;
+    }
+    switch (title) {
+      case "Missões Oficiais - Outros Órgãos":
+      case "Condecorações":
+      case "Seminários e Congressos":
+      case "Missões Oficiais":
+      case "Atividades Profissionais e Cargos Públicos":
+      case "Mandatos (na Câmara dos Deputados)":
+      case "Estudos e Cursos Diversos":
+      case "Filiações Partidárias":
+      case "Atividades Partidárias":
         this.asTable();
         break;
-      case "f24596b67f7291982ec060bbef51c9d3":
-      case "1a2763438aaac7df5a0ad75a0ba33b5a":
+      case "Atividades Parlamentares":
         this.asList();
         break;
       case "15831589ecda20d8bdf7a5f6eb3e42a8":
       case "1969e86f7d90e8847bd27ddf83e3d4f3":
       case "b6dd4de4c13b612ce37967ac933bcfb3":
-      case "3e586eade204caddfe4ba259547e1e5a":
+      case "Conselhos":
+      case "Obras Publicadas":
         this.asText("\n");
         break;
       default:
@@ -29,10 +38,12 @@ var AboutProcess = Ember.Object.extend({
   },
 
   setType: function() {
-    switch (this.get('section_key')) {
-      case "f24596b67f7291982ec060bbef51c9d3":
-      case "1a2763438aaac7df5a0ad75a0ba33b5a":
-      case "bc16af5126991cfd262aae5b58da37e0":
+    "use strict";
+
+    switch (this.get('title').trim()) {
+      case "Atividades Parlamentares":
+      case "Atividades Partidárias":
+      case "Mandatos (na Câmara dos Deputados)":
         this.setMain();
         break;
       default:
@@ -55,12 +66,21 @@ var AboutProcess = Ember.Object.extend({
   },
 
   asList: function() {
-    var body, list, row, row_title, text, texts, title, _i, _l, _len, _row;
-    list = [];
-    body = this.get('body').split("\n");
-    for (_i = 0, _len = body.length; _i < _len; _i++) {
-      row = body[_i];
-      title = row.split(":")[0];
+    "use strict";
+
+    var list = [],
+        body = this.get('body').split("\n");
+
+    var clearTexts = function(_this) {
+          return function(text) {
+            return _this.clean(text);
+          };
+        };
+
+    for (var i = 0, len = body.length; i < len; i++) {
+      var row = body[i],
+          title = row.split(":")[0];
+
       if (title.indexOf(" - ") !== -1) {
         list.push({
           title: title,
@@ -71,20 +91,18 @@ var AboutProcess = Ember.Object.extend({
           this.asTable();
           break;
         }
-        _row = row.split(":");
-        _l = list.splice(-1)[0];
-        row_title = _row.shift();
-        text = _row.join(":");
-        texts = _.map(text.split(";"), (function(_this) {
-          return function(text) {
-            return _this.clean(text);
-          };
-        })(this));
+
+        var _row = row.split(":"),
+            _l = list.splice(-1)[0],
+            row_title = _row.shift(),
+            text = _row.join(":"),
+            texts = _.map(text.split(";"), clearTexts(this));
 
         _l.itens.push({
           title: row_title,
           texts: texts
         });
+
         list.push(_l);
       }
     }
@@ -92,23 +110,43 @@ var AboutProcess = Ember.Object.extend({
   },
 
   asTable: function(row_delimiter, line_delimiter) {
-    var label, row, table, text, _i, _len, _ref, _row;
+    "use strict";
+
     if (row_delimiter == null) {
       row_delimiter = ";";
     }
     if (line_delimiter == null) {
       line_delimiter = ",";
     }
-    table = [];
-    _ref = this.get('body').split(row_delimiter);
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      row = _ref[_i];
-      _row = row.split(line_delimiter);
-      label = _row.shift();
-      text = _row.join(line_delimiter).replace(/^ /, "").replace(/^(da|do) /, "");
+    var table = [],
+        body = this.get('body'),
+        withTitle = body.split("\n");
+
+    if (withTitle.length > 1) {
+      table.push({
+        label: withTitle[0],
+        isTitle: true
+      });
+      body = withTitle[1];
+    }
+
+    var ref = body.split(row_delimiter);
+
+    for (var i = 0, len = ref.length; i < len; i++) {
+      var row = ref[i],
+          _row = row.split(line_delimiter),
+          label = _row.shift();
+          var text = _row.join(line_delimiter).replace(/^ /, "").replace(/^(da|do) /, "");
+
+      if (text === "") {
+        text = label;
+        label = "";
+      }
+
       table.push({
         label: label,
-        text: this.clean(text)
+        text: this.clean(text),
+        isTitle: false
       });
     }
     return this.set("table", table);
@@ -121,9 +159,13 @@ var AboutProcess = Ember.Object.extend({
 
 export default DS.Transform.extend({
   deserialize: function(serialized) {
-    var _i, _len, data = [];
-    for (_i = 0, _len =serialized.length; _i < _len; _i++) {
-      data.push(AboutProcess.create(serialized[_i]));
+    var items = serialized.split("\n\n"), data = [];
+
+    for (var i = 0, len = items.length; i < len; i++) {
+      var item = items[i],
+          body = item.split("\n"),
+          title = body.shift();
+      data.push(AboutProcess.create({title: title, body: body.join("\n")}));
     }
 
     return data;
