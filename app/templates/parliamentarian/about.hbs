@@ -9,17 +9,24 @@
 
 <div id="abouts" class="section">
   <ul id="about-main">
-    {{#each about}}
+    {{#each biography}}
     {{#if main}}
     <li>
       <h4>{{title}}</h4>
       {{#if table}}
       <table>
         {{#each table}}
+        {{isTitle}}
+        {{#if isTitle}}
+        <tr>
+          <th colspan="2"><strong>{{label}}</strong></th>
+        </tr>
+        {{else}}
         <tr>
           <th>{{label}}</th>
           <td>{{text}}</td>
         </tr>
+        {{/if}}
         {{/each}}
       </table>
       {{/if}}
@@ -48,17 +55,23 @@
   </ul>
 
   <ul id="about-secondary">
-    {{#each about}}
+    {{#each biography}}
     {{#if secondary}}
     <li>
       <h4>{{title}}</h4>
       {{#if table}}
       <table>
         {{#each table}}
+        {{#if isTitle}}
+        <tr>
+          <th colspan="2"><strong>{{label}}</strong></th>
+        </tr>
+        {{else}}
         <tr>
           <th>{{label}}</th>
           <td>{{text}}</td>
         </tr>
+        {{/if}}
         {{/each}}
       </table>
       {{/if}}

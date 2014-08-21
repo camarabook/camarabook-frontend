@@ -5,6 +5,7 @@ export default DS.Model.extend({
   name: attr('string'),
   other_names: attr(),
   image: attr('string'),
+  biography: attr('about'),
 
   real_name: function(){
     return this.get('other_names')[0].name;
